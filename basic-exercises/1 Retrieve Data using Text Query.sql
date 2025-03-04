@@ -1,0 +1,25 @@
+USE moviesdb;
+SELECT * FROM movies;
+SELECT title, industry FROM movies;
+SELECT * FROM movies WHERE industry='hollywood';
+SELECT COUNT(*) FROM movies WHERE industry='bollywood';
+SELECT DISTINCT industry FROM movies;
+SELECT * FROM movies WHERE title LIKE '%america%';
+SELECT * FROM movies WHERE studio="";
+SELECT * FROM movies WHERE title LIKE 'Parasite' AND studio="";
+SELECT * FROM movies;
+SELECT title, release_year FROM movies WHERE studio='Marvel Studios';
+SELECT * FROM movies WHERE title LIKE '%Avenger%';
+SELECT DISTINCT release_year FROM movies WHERE title='The Godfather';
+SELECT DISTINCT studio FROM movies WHERE industry='bollywood';
+SELECT * FROM movies WHERE imdb_rating>=9;
+SELECT * FROM movies WHERE imdb_rating BETWEEN 6 AND 8;
+SELECT * FROM movies WHERE release_year=2022 OR release_year=2019 OR release_year=2018;
+SELECT * FROM movies WHERE release_year IN (2022, 2019);
+SELECT * FROM movies WHERE studio IN ("Marvel Studios", "Zee Studios");
+SELECT * FROM movies WHERE imdb_rating is NULL;
+SELECT * FROM movies WHERE imdb_rating is NOT NULL;
+SELECT * FROM movies WHERE industry='bollywood' ORDER BY imdb_rating;
+SELECT * FROM movies WHERE industry='hollywood' ORDER BY imdb_rating DESC;
+SELECT * FROM movies WHERE industry='hollywood' ORDER BY imdb_rating DESC LIMIT 5 OFFSET 0;
+
